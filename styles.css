@@ -1,70 +1,92 @@
+
 body {
-    color: #404e67;
-    background-color: rgb(227, 227, 233);
+    color: #e0e0e0;
+    background-color: #1a1a1a;
     font-family: "Open Sans", sans-serif;
 }
 
 #content {
-    background-color: rgb(227, 227, 233);
+    background-color: #1a1a1a;
     padding-bottom: 50px;
 }
 
 .header {
     display: flex;
     flex-direction: column;
-    height: 80px;
-    background-color: rgba(91,192,222,255);
+    height: 100px;
+    background: linear-gradient(135deg, #2c3e50 0%, #9e34db 100%);
     text-align: center;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    color: #fff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: #ffffffda;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-    margin: 0;
+.header h1 {
+    margin: auto 0;
+    font-size: 2.2em;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
 
 #input {
     display: flex;
     flex-direction: row;
+    gap: 30px;
+    padding: 0 30px;
 }
 
-
-/* ---------------------- Seleccion algoritmo -------------------- */
+/* Algorithm Selection */
 #select-algorithm-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 0 50px;
+    background: #2d2d2d;
+    border-radius: 15px;
+    padding: 25px;
     margin-top: 50px;
-    width: 550px;
-    height: 350px;
-    background-color: #fff;
-    border-radius: 20px;
-    padding-top: 30px;
+    width: 350px;
+    height: fit-content;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
 }
 
 #select-algorithm-container h2 {
-    width: 400px;
+    color: #ecf0f1;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    font-weight: 300;
 }
 
 #input select {
-    width: 350px;
-    height: 40px;
-    margin: 30px 0;
-    border: 1px solid #999;
-    font-size: 18px;
-    color: #1c87c9;
-    background-color: #eee;
-    border-radius: 5px;
+    width: 100%;
+    height: 45px;
+    background: #3d3d3d;
+    border: 1px solid #4a4a4a;
+    color: #ecf0f1;
+    border-radius: 8px;
+    padding: 0 15px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+#input select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
 #btn-start {
-    width: 350px;
+    width: 100%;
+    height: 45px;
+    background: #3498db;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1em;
+    transition: transform 0.2s ease;
 }
-/* ------------------------------------------------------------------ */
 
+#btn-start:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
 
 /* -------------------------  Tabla Procesos  ---------------------- */
 .table-wrapper {
@@ -151,10 +173,8 @@ table.table .form-control.error {
 table.table td .add {
     display: none;
 }
-/* ------------------------------------------------------------------------- */
 
-
-/* ----------------------- Grafica procesos --------------------------------*/
+/* Timeline Graphic (Reverted to original structure) */
 #graphic {
     display: flex;
     flex-direction: column;
@@ -162,7 +182,7 @@ table.table td .add {
     justify-content: center;
     margin: 20px;
     overflow-x: scroll;
-    background-color: #fff;
+    background-color: #2d2d2d;
     border-radius: 20px;
     padding: 50px 90px 20px 40px;
     min-height: 400px;
@@ -193,6 +213,7 @@ table.table td .add {
 .process-label {
     text-align: right;
     margin-top: 15px;
+    color: #ecf0f1;
 }
 
 .process-label-container {
@@ -206,6 +227,7 @@ table.table td .add {
     width: 40px;
     text-align: left;
     margin-top: 5px;
+    color: #95a5a6;
 }
 
 .snapshot {
@@ -218,28 +240,17 @@ table.table td .add {
     width: 40px;
     height: 30px;
     margin: 3px;
-    border: 1px solid #000;
+    border: 1px solid #3d3d3d;
 }
 
-.exists {
-    background-color: #fff;
-}
-
-.blocked {
-    background-color: #ff0000;
-}
-
-.running {
-    background-color: #00ff00;
-}
-
-.waiting {
-    background-color: #9d9a9a;
-}
+.exists { background-color: #2d2d2d; }
+.blocked { background-color: #e74c3c; }
+.running { background-color: #2ecc71; }
+.waiting { background-color: #95a5a6; }
 
 .axis {
     position: absolute;
-    border: 2px solid #000;
+    border: 2px solid #3d3d3d;
 }
 
 .axis-x {
@@ -251,38 +262,60 @@ table.table td .add {
     bottom: calc(10%);
     height: calc(100%);
 }
-/* -------------------------------------------------------------------------- */
 
-
-/* ------------------------------ Estadisticas -------------------------------- */
+/* Statistics */
 #stats-container {
-    min-height: 300px;
-    background-color: #fff;
-    border-radius: 20px;
-    margin: 30px;
-    padding: 20px;
+    background: #2d2d2d;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
 }
 
 #stats-container h2 {
-    text-align: center;
+    color: #ecf0f1;
+    font-weight: 300;
+    padding: 20px 0;
 }
 
-.stats {
-    display: flex;
+.stats table {
+    color: #e0e0e0;
 }
 
-#general-stats {
-    width: 25%;
+.stats th {
+    font-weight: 400;
+    background: #3d3d3d !important;
 }
 
-#general-stats table{
-    width: 100%;
+.stats td {
+    background: #2d2d2d !important;
 }
 
-#process-stats {
-
-    width: 75%;
+/* Form Controls */
+.form-control {
+    background: #3d3d3d !important;
+    border: 1px solid #4a4a4a !important;
+    color: #ecf0f1 !important;
 }
 
+.form-control:focus {
+    border-color: #3498db !important;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2) !important;
+}
 
-/* ---------------------------------------------------------------------------- */
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5a5a5a;
+}

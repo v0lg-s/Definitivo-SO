@@ -4,6 +4,7 @@ import { getGeneralStats, getProcessStats } from "./statistics.js";
 import FCFS from "./algorithms/FCFS.js"
 import SJF from "./algorithms/SJF.js";
 import SRTF from "./algorithms/SRTF.js";
+import RR from "./algorithms/RR.js";
 
 var timeline = SJFOutput
 var tableData = processes
@@ -116,24 +117,32 @@ $(document).ready(function(){
 const selectAlgorithm = document.getElementById("select-algorithm")
 const btnStart = document.getElementById("btn-start")
 
-btnStart.addEventListener("click", () => {
-    const algorithm = selectAlgorithm.value
+selectAlgorithm.addEventListener('change', () => {
+    document.getElementById('quantum-container').style.display = 
+        selectAlgorithm.value === 'RR' ? 'block' : 'none';
+});
 
-    //TODO: Llamar a los algoritmos y asignar resultado a timeline
+btnStart.addEventListener("click", () => {
+    const algorithm = selectAlgorithm.value;
+    let quantum = 2;
+    quantum = parseInt(document.getElementById('quantum').value) || 2;
+        if (quantum < 1) {
+            alert("Quantum debe ser mayor que 0");
+            return;
+        }
+    
     switch(algorithm){
         case "FCFS":
-            timeline = FCFS(tableData)
+            timeline = FCFS(tableData);
             break;
-        
         case "SJF":
-            timeline = SJF(tableData)
+            timeline = SJF(tableData);
             break;
-            
         case "SRTF":
-            timeline = SRTF(tableData)
+            timeline = SRTF(tableData);
             break;
-
-        case "RR":
+        case "RR": 
+            timeline = RR(tableData, quantum);
             break;
     }
 

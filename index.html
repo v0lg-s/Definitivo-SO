@@ -19,12 +19,12 @@
 <body>
     <div id="content">
         <div class="header">
-            <h1>Algoritmos de Planificación a Corto Plazo</h1>
+            <h1>Planificador CPU</h1>
         </div>
 
         <div id="input">
             <div id="select-algorithm-container">
-                <h2>Selecciona el algoritmo de planificación</h2>
+                <h2>Seleccionar el algoritmo</h2>
 
                 <select id="select-algorithm">
                     <option value="FCFS">FCFS – Firstcome, first served</option>
@@ -32,9 +32,17 @@
                     <option value="SRTF">SRTF – Short Remaining Time First</option>
                     <option value="RR">RR – Round Robin</option>
                   </select>
-
                   <button id="btn-start" type="button" class="btn btn-info">Iniciar Simulación <i class="fa fa-play"></i></button>
+
+                  <div id="quantum-container" style="display: none;">
+                    <h2>Quantum</h2>
+                    <input type="number" id="quantum" min="1" value="2" class="form-control" style="width: 100px">
+                </div>
             </div>
+
+            
+
+            
 
 
             <div class="container">
@@ -42,7 +50,7 @@
                     <div class="table-title">
                         <div class="row">
                             <div class="col-sm-8">
-                                <h2><b>Procesos a Ejecutar</b></h2>
+                                <h2><b>Lista de procesos:</b></h2>
                             </div>
                             <div class="col-sm-4">
                                 <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Agregar Proceso</button>
@@ -79,7 +87,7 @@
         </div>
 
         <div id="stats-container">
-            <h2><b>Estadísticas</b></h2>
+            <h2><b>Datos de salida</b></h2>
 
             <div class="stats">
                 <div id="general-stats" class="table-wrapper">
