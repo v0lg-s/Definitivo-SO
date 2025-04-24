@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmos de Planificación</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <div class="header">
+            <h1>Algoritmos de Planificación a Corto Plazo</h1>
+        </div>
+
+        <div id="input">
+            <div id="select-algorithm-container">
+                <h2>Selecciona el algoritmo de planificación</h2>
+
+                <select id="select-algorithm">
+                    <option value="FCFS">FCFS – Firstcome, first served</option>
+                    <option value="SJF">SJF – Shortest Job First</option>
+                    <option value="SRTF">SRTF – Short Remaining Time First</option>
+                    <option value="RR">RR – Round Robin</option>
+                  </select>
+
+                  <button id="btn-start" type="button" class="btn btn-info">Iniciar Simulación <i class="fa fa-play"></i></button>
+            </div>
+
+
+            <div class="container">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h2><b>Procesos a Ejecutar</b></h2>
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Agregar Proceso</button>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-bordered" id="process-table">
+                        <thead>
+                            <tr>
+                                <th>Proceso</th>
+                                <th>Instante llegada</th>
+                                <th>Tiempo de Ejecución</th>
+                                <th>Inicio Bloqueo 1</th>
+                                <th>Duración Bloqueo 1</th>
+                                <th>Inicio Bloqueo 2</th>
+                                <th>Duración Bloqueo 2</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="graphic">
+            <div id="timeline-container" class="timeline-container">
+                <div class="timeline" id="timeline">
+                    <div class="axis axis-x"></div>
+                    <div class="axis axis-y"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="stats-container">
+            <h2><b>Estadísticas</b></h2>
+
+            <div class="stats">
+                <div id="general-stats" class="table-wrapper">
+                    <table class="table table-bordered">
+                        <tbody id="tbody-general-stats">
+                            <tr><th>Tiempo encendido</th><td></td></tr>
+                            <tr><th>Uso total de CPU</th><td></td></tr>
+                            <tr><th>CPU desocupada</th><td></td></tr>
+                            <tr><th>Promedio retorno</th><td></td></tr>
+                            <tr><th>Promedio de ejecución</th><td></td></tr>
+                            <tr><th>Promedio de espera</th><td></td></tr>
+                            <tr><th>Promedio de tiempo perdido</th><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="process-stats" class="table-wrapper">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Proceso</th>
+                                <th>Ejecución</th>
+                                <th>Espera</th>
+                                <th>Bloqueo</th>
+                                <th>Instante fin</th>
+                                <th>Retorno</th>
+                                <th>Tiempo perdido</th>
+                                <th>Penalidad</th>
+                                <th>Tiempo respuesta</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-process-stats"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
