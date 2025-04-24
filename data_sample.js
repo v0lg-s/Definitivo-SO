@@ -2,12 +2,12 @@
 //Entrada: Array de objetos cada uno representa un proceso con sus atributos
 
 export const processes = [
-    { name: "A", arrival: 0, executionTime: 6, block1Start: 3, block1Duration: 2, block2Start: 40, block2Duration: 0 },
-    { name: "B", arrival: 1, executionTime: 8, block1Start: 1, block1Duration: 3, block2Start: 40, block2Duration: 0 },
-    { name: "C", arrival: 2, executionTime: 7, block1Start: 5, block1Duration: 1, block2Start: 40, block2Duration: 0 },
-    { name: "D", arrival: 4, executionTime: 3, block1Start: 0, block1Duration: 0, block2Start: 40, block2Duration: 0 },
-    { name: "E", arrival: 6, executionTime: 9, block1Start: 2, block1Duration: 4, block2Start: 40, block2Duration: 0 },
-    { name: "F", arrival: 6, executionTime: 2, block1Start: 0, block1Duration: 0, block2Start: 40, block2Duration: 0 },
+    { name: "A", arrival: 0, executionTime: 6, block1Start: 3, block1Duration: 2, block2Start: 0, block2Duration: 0 },
+    { name: "B", arrival: 1, executionTime: 8, block1Start: 1, block1Duration: 3, block2Start: 0, block2Duration: 0 },
+    { name: "C", arrival: 2, executionTime: 7, block1Start: 5, block1Duration: 1, block2Start: 0, block2Duration: 0 },
+    { name: "D", arrival: 4, executionTime: 3, block1Start: 0, block1Duration: 0, block2Start: 0, block2Duration: 0 },
+    { name: "E", arrival: 6, executionTime: 9, block1Start: 2, block1Duration: 4, block2Start: 0, block2Duration: 0 },
+    { name: "F", arrival: 6, executionTime: 2, block1Start: 0, block1Duration: 0, block2Start: 0, block2Duration: 0 },
 ];
 
 
